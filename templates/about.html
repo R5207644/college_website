@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Page</title>
+
+  {%load static %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {%load static %}
+  <link rel="stylesheet" href="{%static 'style.css'%}">
+
+    <style>
+      .carousel-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 300px;
+      }
+      .carousel-inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .carousel-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .carousel-indicator {
+        width: 10px;
+        height: 10px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      .carousel-indicator.active {
+        background-color: #333;
+      }
+    </style>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var carousel = document.querySelector(".carousel");
+      var carouselInner = document.querySelector(".carousel-inner");
+      var carouselImages = carouselInner.querySelectorAll(".carousel-image");
+      var carouselIndicators = document.querySelectorAll(".carousel-indicator");
+
+      var slideIndex = 0;
+      var interval = setInterval(autoSlide, 3000);
+
+      function autoSlide() {
+        carouselInner.style.transform = "translateX(" + -slideIndex * 100 + "%)";
+        carouselIndicators[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + 1) % carouselImages.length;
+        carouselIndicators[slideIndex].classList.add("active");
+      }
+
+      carousel.addEventListener("mouseover", function() {
+        clearInterval(interval);
+      });
+
+      carousel.addEventListener("mouseout", function() {
+        interval = setInterval(autoSlide, 3000);
+      });
+    });
+  </script>
+</head>
+<body link="white" alink="red" vlink="white">
+  <header>
+    <div class="navbar">
+        <div class="nav-logo border">
+            <div class="logo">
+
+            </div>
+        </div>
+        <div class="nav-address border">
+            <p class="add-Deliver">Party</p>
+            <div class="add-icon">
+                <a href="about"><i class="fa-solid fa-champagne-glasses"></i></a>
+                <a href="about"class="add-India" style="text-decoration:none">B.C.A</a>
+            </div>
+        </div>
+        <div class="nav-search">
+            <select class="nav-search-select" onchange="window.location.href=this.value;">
+              <a href=""><i class="fa-solid fa-bars"></i></a>
+                <option>All</option>
+                <option value="sarvesh">sarvesh</option>
+                <option value="full_stack">FULL STACK</option>
+                <option value="front_end">front end</option>
+                <option value="security">security</option>
+                <option value="data_scientist">data scientist</option>
+            </select>
+            <input placeholder="Search in Mahadev" class="nav-search-input">
+            <div class="nav-search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="nav-lang border">
+            <i class="fa-solid fa-flag-usa"></i>
+            <select name="" id=""><option><p>EN</p></option></select>
+
+        </div>
+        <div class="nav-signing border">
+            <p><span >Hello, sign in</span></p>
+            <p class="nav-signin-second">Fresher Party2022</p>
+        </div>
+        <div class="nav-return border">
+            <p><span>Freshers</span></p>
+            <p class="nav-signin-second">& Seniurs</p>
+        </div>
+        <div class="nav-cart border">
+            <i class="fa-solid fa-microchip"></i>
+            Tech
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-all">
+            <i class="fa-solid fa-bars"></i>
+            All
+        </div>
+        <div class="panel-options">
+            <a href="data_scientist" style="text-decoration:none">Data Scientist</a>
+            <a href="security" style="text-decoration:none">Sequrity Admin</a>
+            <a href="front_end" style="text-decoration:none">front-end Developer</a>
+            <a href="sarvesh" style="text-decoration:none">Back-end Developer</a>
+            <a href="full_stack" style="text-decoration:none">Full Stack Developer</a>
+        </div>
+        <div class="panel-deals">
+            <a href="#" style="text-decoration:none">Some Good Projects of B.C.A Students</a>
+        </div>
+    </div>
+</header>
+
+
+    
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-inner">
+      <img class="carousel-image" src="/static/bca_img/1.jpg" alt="Image 1">
+      <img class="carousel-image" src="/static/bca_img/2.jpg" alt="Image 2">
+      <img class="carousel-image" src="/static/bca_img/3.jpg" alt="Image 3">
+      <img class="carousel-image" src="/static/bca_img/4.jpg" alt="Image 4">
+      <img class="carousel-image" src="/static/bca_img/5.jpg" alt="Image 5">
+      <img class="carousel-image" src="/static/bca_img/6.jpg" alt="Image 6">
+      <img class="carousel-image" src="/static/bca_img/7.jpg" alt="Image 7">
+      <img class="carousel-image" src="/static/bca_img/8.jpg" alt="Image 8">
+      <img class="carousel-image" src="/static/bca_img/9.jpg" alt="Image 9">
+    </div>
+  </div>
+  <div class="carousel-indicators">
+    <div class="carousel-indicator active"></div>
+    <div class="carousel-indicator"></div>
+    <div class="carousel-indicator"></div>
+  </div>
+</div>
+
+</body>
+</html>
