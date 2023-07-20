@@ -2,12 +2,19 @@
 {% block title %}contact us{% endblock title %}
 
 {% block body %}
-        <form>
+<h2 class="text-center">Contact Us</h2>
+        <form method="POST" action="/contact">
+          {% csrf_token %}
             <div class="contact-form">
               <label for="name">Full Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Write Your Full Name Here">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Write Your Full Name Here">
+              <label for="email">Email address</label>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Write Your email Here">
+              <label for="sem">Semester</label>
+              <input type="text" class="form-control" id="sem" name="sem" placeholder="Write Your semsester Here">
+              <label for="review">your review</label>
+              <input type="text" class="form-control" id="review" name="review" placeholder="Write about this website">
             </div>
-
-        
+            <button class="btn btn-Primary" type="submitt">submitt</button>
         </form>
     {% endblock body%}
