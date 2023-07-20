@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.site.site_header="MPGC BCA students Admin"
 admin.site.site_title="BCA students Admin Portal"
@@ -26,5 +25,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls'))
 ]
-
-urlpatterns+=staticfiles_urlpatterns()
