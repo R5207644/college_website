@@ -4,6 +4,9 @@
     border: border-box;
 
 }
+.register-link:link{
+    color: red;
+}
 .navbar {
     height: 60px;
     background-color: #0F1111;

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from home import views
+from registration import views as regi
 
 urlpatterns = [
    path('',views.index, name='index'),
@@ -12,4 +13,7 @@ urlpatterns = [
    path("contact",views.contact, name='contact'),
    path("security",views.security, name='security'),
    path("data_scientist",views.data_scientist,name='data_scientist'),
+   path("register",regi.register,name='SignUp'),
+   path('login',regi.login, name='login'),
+   path('logout',regi.logout, name='logout'),
 ]
