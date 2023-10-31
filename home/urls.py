@@ -5,6 +5,7 @@ from registration import views as regi
 
 urlpatterns = [
    path('',views.index, name='index'),
+   path('/',views.index, name='index'),
    path("index",views.index, name='index'),
    path("about",views.about, name='about'),
    path("sarvesh",views.sarvesh, name='sarvesh'),
